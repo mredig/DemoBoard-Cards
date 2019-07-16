@@ -16,6 +16,7 @@
 		337239F022D58D6400A4C9B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 337239EF22D58D6400A4C9B7 /* Assets.xcassets */; };
 		337239F322D58D6400A4C9B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 337239F122D58D6400A4C9B7 /* Main.storyboard */; };
 		337239FC22D58D9800A4C9B7 /* NoteCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337239FB22D58D9800A4C9B7 /* NoteCard.swift */; };
+		33F8EAEB22DE4BFD0021E450 /* TileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F8EAEA22DE4BFD0021E450 /* TileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		337239F422D58D6400A4C9B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		337239F522D58D6400A4C9B7 /* Demo_Board.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo_Board.entitlements; sourceTree = "<group>"; };
 		337239FB22D58D9800A4C9B7 /* NoteCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCard.swift; sourceTree = "<group>"; };
+		33F8EAEA22DE4BFD0021E450 /* TileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			children = (
 				330970A222DDAAF30003B4F6 /* CardController.swift */,
 				330AC57D22DDAE2800D22D24 /* LabelController.swift */,
+				33F8EAEA22DE4BFD0021E450 /* TileController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				330970A322DDAAF30003B4F6 /* CardController.swift in Sources */,
+				33F8EAEB22DE4BFD0021E450 /* TileController.swift in Sources */,
 				337239EE22D58D6300A4C9B7 /* ViewController.swift in Sources */,
 				337239FC22D58D9800A4C9B7 /* NoteCard.swift in Sources */,
 				337239EC22D58D6300A4C9B7 /* CorkBoardScene.swift in Sources */,

@@ -12,10 +12,19 @@ import GameplayKit
 class CorkBoardScene: SKScene {
 
 	let cardController = CardController()
+	let tileController = TileController()
 
     override func didMove(to view: SKView) {
-
+		tileController.layout(for: view.frame.size)
+		tileController.unparentedTiles.forEach { addChild($0) }
     }
+
+	override func didChangeSize(_ oldSize: CGSize) {
+		super.didChangeSize(oldSize)
+		guard let view = view else { return }
+		tileController.layout(for: view.frame.size)
+		tileController.unparentedTiles.forEach { addChild($0) }
+	}
     
     
 	func createNewCard() {
