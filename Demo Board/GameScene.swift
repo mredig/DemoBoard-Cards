@@ -53,7 +53,24 @@ class GameScene: SKScene {
 //        default:
 //            print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
 //        }
+		
     }
+	override func keyUp(with event: NSEvent) {
+		// keycode 51 is backspace, 36 is return
+		switch event.keyCode {
+		case 51:
+			//backspace pressed
+			return
+		case 36:
+			// return pressed
+			return
+		default:
+			break
+		}
+
+		guard let character = event.characters?.first else { return }
+		print(character)
+	}
     
     
     override func update(_ currentTime: TimeInterval) {

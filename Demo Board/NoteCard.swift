@@ -68,8 +68,6 @@ class NoteCard: SKNode {
 		let child = atPoint(location)
 		if child.name == "handle" {
 			movingOffset = CGPoint(x: -location.x, y: -location.y)
-		} else {
-
 		}
 	}
 
@@ -89,11 +87,5 @@ class NoteCard: SKNode {
 		movingOffset = nil
 	}
 
-	override func keyUp(with event: NSEvent) {
-		let code = event.keyCode
-		guard let scalar = Unicode.Scalar(code) else { return }
-		let character = Character(scalar)
-		print(character)
 
-	}
 }
