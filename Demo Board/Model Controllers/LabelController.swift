@@ -15,6 +15,19 @@ class LabelController {
 	private let startOffset: CGFloat
 	private let iterationOffset: CGFloat
 
+	private var _currentLabel: SKLabelNode?
+	var currentLabel: SKLabelNode? {
+		get {
+			return _currentLabel ?? labels.last
+		}
+
+		set {
+			labels.forEach { $0.fontColor = .black }
+			_currentLabel = newValue
+			_currentLabel?.fontColor = .gray
+		}
+	}
+
 	init(maxHeight: CGFloat, startOffset: CGFloat, iterationOffset: CGFloat) {
 		self.maxHeight = maxHeight
 		self.startOffset = startOffset
@@ -38,15 +51,21 @@ class LabelController {
 		}
 
 		labels.append(label)
+		setCurrentLabel(label)
 		return label
 	}
 
 	func remove(label: SKLabelNode) {
 		guard let index = labels.firstIndex(of: label) else { return }
 		labels.remove(at: index)
+		if currentLabel == label {
+			currentLabel = labels.last
+		}
 	}
 
-	func currentLabel() -> SKLabelNode? {
-		return labels.last
+	func setCurrentLabel(_ label: SKLabelNode) {
+		if labels.contains(label) {
+			currentLabel = label
+		}
 	}
 }

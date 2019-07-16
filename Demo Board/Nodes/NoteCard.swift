@@ -100,7 +100,7 @@ class NoteCard: SKNode {
 	}
 
 	func appendCharacter(_ character: Character) {
-		if let currentLabel = labelController.currentLabel() {
+		if let currentLabel = labelController.currentLabel {
 			guard let currentText = currentLabel.text else { return }
 			currentLabel.text = "\(currentText)\(character)"
 		} else {
@@ -111,7 +111,7 @@ class NoteCard: SKNode {
 	}
 
 	func deleteCharacter() {
-		guard let currentLabel = labelController.currentLabel() else { return }
+		guard let currentLabel = labelController.currentLabel else { return }
 		guard var currentText = currentLabel.text else { return }
 		guard !currentText.isEmpty else {
 			labelController.remove(label: currentLabel)
