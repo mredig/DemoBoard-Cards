@@ -13,9 +13,15 @@ class NoteCard: SKNode {
 	let background: SKSpriteNode
 	let handle: SKSpriteNode
 	var contents = [SKLabelNode]()
+	weak var selectHandler: ItemSelectHandler?
 
+	var selected = false {
+		didSet {
+			updateViews()
+		}
+	}
 
-	init(size: CGSize) {
+	init(size: CGSize, selectHandler: ItemSelectHandler?) {
 		var size = size
 		if size.height < 40 {
 			size.height = 40
@@ -32,12 +38,19 @@ class NoteCard: SKNode {
 		super.init()
 		addChild(background)
 		background.addChild(handle)
+
+		self.selectHandler = selectHandler
 	}
 
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+	func updateViews() {
+		handle.color = selected ? .darkGray : .gray
+	}
+
+	// MARK: - input
 	override var isUserInteractionEnabled: Bool {
 		get {
 			return true
@@ -49,6 +62,8 @@ class NoteCard: SKNode {
 
 	var movingOffset: CGPoint?
 	override func mouseDown(with event: NSEvent) {
+		selectHandler?.deselectAll()
+		selected = true
 		let location = event.location(in: self)
 		let child = atPoint(location)
 		if child.name == "handle" {

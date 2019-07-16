@@ -20,7 +20,7 @@ class GameScene: SKScene {
     
     func touchDown(atPoint pos : CGPoint) {
 		let newCardSize = CGSize(width: 400, height: 300)
-		let newCard = NoteCard(size: newCardSize)
+		let newCard = NoteCard(size: newCardSize, selectHandler: self)
 		addChild(newCard)
 		let newPos = CGPoint(x: pos.x - newCardSize.width / 2, y: pos.y - newCardSize.height / 2)
 		newCard.position = newPos
@@ -60,3 +60,18 @@ class GameScene: SKScene {
         // Called before each frame is rendered
     }
 }
+
+protocol ItemSelectHandler: AnyObject {
+	func deselectAll()
+}
+
+
+extension GameScene: ItemSelectHandler {
+	func deselectAll() {
+		for card in cards {
+			card.selected = false
+		}
+	}
+}
+
+
