@@ -13,14 +13,14 @@ import GameplayKit
 class ViewController: NSViewController {
 
     @IBOutlet var skView: SKView!
-	var scene: GameScene?
+	var scene: CorkBoardScene?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let view = self.skView {
             // Load the SKScene from 'GameScene.sks'
-            let scene = GameScene(size: view.frame.size)
+            let scene = CorkBoardScene(size: view.frame.size)
 			self.scene = scene
 			// Set the scale mode to scale to fit the window
 			scene.scaleMode = .aspectFill

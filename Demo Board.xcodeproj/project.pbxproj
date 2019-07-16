@@ -11,7 +11,7 @@
 		330AC57E22DDAE2800D22D24 /* LabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330AC57D22DDAE2800D22D24 /* LabelController.swift */; };
 		330AC58222DE3C2E00D22D24 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 330AC58122DE3C2E00D22D24 /* README.md */; };
 		337239E622D58D6300A4C9B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337239E522D58D6300A4C9B7 /* AppDelegate.swift */; };
-		337239EC22D58D6300A4C9B7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337239EB22D58D6300A4C9B7 /* GameScene.swift */; };
+		337239EC22D58D6300A4C9B7 /* CorkBoardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337239EB22D58D6300A4C9B7 /* CorkBoardScene.swift */; };
 		337239EE22D58D6300A4C9B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337239ED22D58D6300A4C9B7 /* ViewController.swift */; };
 		337239F022D58D6400A4C9B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 337239EF22D58D6400A4C9B7 /* Assets.xcassets */; };
 		337239F322D58D6400A4C9B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 337239F122D58D6400A4C9B7 /* Main.storyboard */; };
@@ -24,7 +24,7 @@
 		330AC58122DE3C2E00D22D24 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		337239E222D58D6300A4C9B7 /* Demo Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		337239E522D58D6300A4C9B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		337239EB22D58D6300A4C9B7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		337239EB22D58D6300A4C9B7 /* CorkBoardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorkBoardScene.swift; sourceTree = "<group>"; };
 		337239ED22D58D6300A4C9B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		337239EF22D58D6400A4C9B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		337239F222D58D6400A4C9B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		330AC57C22DDAE1200D22D24 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				337239EB22D58D6300A4C9B7 /* GameScene.swift */,
+				337239EB22D58D6300A4C9B7 /* CorkBoardScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -176,7 +176,7 @@
 				330970A322DDAAF30003B4F6 /* CardController.swift in Sources */,
 				337239EE22D58D6300A4C9B7 /* ViewController.swift in Sources */,
 				337239FC22D58D9800A4C9B7 /* NoteCard.swift in Sources */,
-				337239EC22D58D6300A4C9B7 /* GameScene.swift in Sources */,
+				337239EC22D58D6300A4C9B7 /* CorkBoardScene.swift in Sources */,
 				330AC57E22DDAE2800D22D24 /* LabelController.swift in Sources */,
 				337239E622D58D6300A4C9B7 /* AppDelegate.swift in Sources */,
 			);

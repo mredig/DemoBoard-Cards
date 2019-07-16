@@ -1,5 +1,5 @@
 //
-//  GameScene.swift
+//  CorkBoardScene.swift
 //  Demo Board
 //
 //  Created by Michael Redig on 7/9/19.
@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class CorkBoardScene: SKScene {
 
 	let cardController = CardController()
 
@@ -37,7 +37,7 @@ class GameScene: SKScene {
 }
 
 // MARK: - Input
-extension GameScene {
+extension CorkBoardScene {
 	func touchDown(atPoint pos : CGPoint) {
 
 	}
