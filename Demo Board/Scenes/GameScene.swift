@@ -19,7 +19,6 @@ class GameScene: SKScene {
     
     
     func touchDown(atPoint pos : CGPoint) {
-
 		let newCard = cardController.create(at: pos)
 		addChild(newCard)
     }
@@ -59,6 +58,8 @@ class GameScene: SKScene {
 
 		guard let character = event.characters?.first else { return }
 		print(character)
+
+//		cardController.selectedCard().
 	}
     
     

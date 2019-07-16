@@ -14,6 +14,7 @@ class NoteCard: SKNode {
 	let handle: SKSpriteNode
 	var contents = [SKLabelNode]()
 	weak var selectHandler: ItemSelectHandler?
+	var labels = [SKLabelNode]()
 
 	var selected = false {
 		didSet {
@@ -90,5 +91,8 @@ class NoteCard: SKNode {
 		movingOffset = nil
 	}
 
+	func getKeystroke(_ character: Character) {
+
+	}
 
 }

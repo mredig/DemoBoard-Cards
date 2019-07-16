@@ -19,6 +19,11 @@ class CardController {
 		cards.append(newCard)
 		return newCard
 	}
+
+	func selectedCard() -> NoteCard? {
+		guard let index = cards.firstIndex(where: { return $0.selected }) else { return nil }
+		return cards[index]
+	}
 }
 
 

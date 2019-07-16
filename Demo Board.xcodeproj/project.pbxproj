@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		330970A222DDAAF30003B4F6 /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
+		330970A222DDAAF30003B4F6 /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardController.swift; path = ../CardController.swift; sourceTree = "<group>"; };
 		337239E222D58D6300A4C9B7 /* Demo Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		337239E522D58D6300A4C9B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		337239EB22D58D6300A4C9B7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -40,6 +40,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330970A422DDADE60003B4F6 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				330970A222DDAAF30003B4F6 /* CardController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		330AC57B22DDAE0D00D22D24 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				337239FB22D58D9800A4C9B7 /* NoteCard.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		330AC57C22DDAE1200D22D24 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				337239EB22D58D6300A4C9B7 /* GameScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		337239D922D58D6300A4C9B7 = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				337239E522D58D6300A4C9B7 /* AppDelegate.swift */,
-				337239EB22D58D6300A4C9B7 /* GameScene.swift */,
-				337239FB22D58D9800A4C9B7 /* NoteCard.swift */,
-				330970A222DDAAF30003B4F6 /* CardController.swift */,
+				330AC57C22DDAE1200D22D24 /* Scenes */,
+				330AC57B22DDAE0D00D22D24 /* Nodes */,
+				330970A422DDADE60003B4F6 /* Model Controllers */,
 				337239ED22D58D6300A4C9B7 /* ViewController.swift */,
 				337239EF22D58D6400A4C9B7 /* Assets.xcassets */,
 				337239F122D58D6400A4C9B7 /* Main.storyboard */,
