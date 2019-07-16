@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330970A322DDAAF30003B4F6 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330970A222DDAAF30003B4F6 /* CardController.swift */; };
 		337239E622D58D6300A4C9B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337239E522D58D6300A4C9B7 /* AppDelegate.swift */; };
 		337239EC22D58D6300A4C9B7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337239EB22D58D6300A4C9B7 /* GameScene.swift */; };
 		337239EE22D58D6300A4C9B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337239ED22D58D6300A4C9B7 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		330970A222DDAAF30003B4F6 /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 		337239E222D58D6300A4C9B7 /* Demo Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		337239E522D58D6300A4C9B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		337239EB22D58D6300A4C9B7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				337239E522D58D6300A4C9B7 /* AppDelegate.swift */,
 				337239EB22D58D6300A4C9B7 /* GameScene.swift */,
 				337239FB22D58D9800A4C9B7 /* NoteCard.swift */,
+				330970A222DDAAF30003B4F6 /* CardController.swift */,
 				337239ED22D58D6300A4C9B7 /* ViewController.swift */,
 				337239EF22D58D6400A4C9B7 /* Assets.xcassets */,
 				337239F122D58D6400A4C9B7 /* Main.storyboard */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				330970A322DDAAF30003B4F6 /* CardController.swift in Sources */,
 				337239EE22D58D6300A4C9B7 /* ViewController.swift in Sources */,
 				337239FC22D58D9800A4C9B7 /* NoteCard.swift in Sources */,
 				337239EC22D58D6300A4C9B7 /* GameScene.swift in Sources */,

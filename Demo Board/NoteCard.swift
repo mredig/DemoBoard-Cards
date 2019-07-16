@@ -39,6 +39,8 @@ class NoteCard: SKNode {
 		addChild(background)
 		background.addChild(handle)
 
+		zPosition = 10
+
 		self.selectHandler = selectHandler
 	}
 
@@ -48,6 +50,7 @@ class NoteCard: SKNode {
 
 	func updateViews() {
 		handle.color = selected ? .darkGray : .gray
+		zPosition = selected ? 11 : 10
 	}
 
 	// MARK: - input
