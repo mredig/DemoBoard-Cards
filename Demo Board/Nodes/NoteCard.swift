@@ -76,6 +76,7 @@ class NoteCard: SKNode {
 
 	var movingOffset: CGPoint?
 	override func mouseDown(with event: NSEvent) {
+		select()
 		let location = event.location(in: self)
 		let child = atPoint(location)
 		switch child.name {

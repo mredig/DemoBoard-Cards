@@ -15,10 +15,6 @@ class TileController {
 		return tiles.filter { $0.parent == nil }
 	}
 
-	var excessTiles: [SKSpriteNode] {
-		return []
-	}
-
 	func layout(for size: CGSize) {
 		let texture = SKTexture(imageNamed: "background")
 		let xTiles = Int(size.width / texture.size().width) + 1
