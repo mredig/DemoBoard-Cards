@@ -12,6 +12,10 @@ import GameplayKit
 
 class ViewController: NSViewController {
 
+	@IBOutlet var toolsBackground: NSView!
+	@IBOutlet var newCardButton: NSButton!
+	@IBOutlet var deleteCardButton: NSButton!
+
     @IBOutlet var skView: SKView!
 	var scene: CorkBoardScene?
     
@@ -33,11 +37,10 @@ class ViewController: NSViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
-    }
 
-//	func temp() {
-//		let vc = storyboard?.instantiateController(withIdentifier: "id")
-//	}
+		toolsBackground.layer = CALayer()
+		toolsBackground.layer?.backgroundColor = .init(gray: 0.3, alpha: 0.8)
+    }
 
 	override func viewDidLayout() {
 		super.viewDidLayout()

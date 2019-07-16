@@ -709,47 +709,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5My-tg-oOK">
-                                <rect key="frame" x="20" y="559" width="257" height="21"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="BoF-ZP-x5Z">
+                                <rect key="frame" x="0.0" y="539" width="297" height="61"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NSs-gu-iIf">
-                                        <rect key="frame" x="-6" y="-7" width="100" height="32"/>
-                                        <buttonCell key="cell" type="push" title="New Card" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0OY-Ov-QmT">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="newCardButtonPressed:" target="XfG-lQ-9wD" id="IOY-BJ-Cvy"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GnV-Bb-7sk">
-                                        <rect key="frame" x="94" y="-7" width="169" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Delete Selected Card" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IdO-Pf-FKX">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="deleteCardButtonPressed:" target="XfG-lQ-9wD" id="UvR-F7-wwl"/>
-                                        </connections>
-                                    </button>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5My-tg-oOK">
+                                        <rect key="frame" x="20" y="20" width="257" height="21"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NSs-gu-iIf">
+                                                <rect key="frame" x="-6" y="-7" width="100" height="32"/>
+                                                <buttonCell key="cell" type="push" title="New Card" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0OY-Ov-QmT">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="newCardButtonPressed:" target="XfG-lQ-9wD" id="IOY-BJ-Cvy"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GnV-Bb-7sk">
+                                                <rect key="frame" x="94" y="-7" width="169" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Delete Selected Card" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IdO-Pf-FKX">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="deleteCardButtonPressed:" target="XfG-lQ-9wD" id="UvR-F7-wwl"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                 </subviews>
-                                <visibilityPriorities>
-                                    <integer value="1000"/>
-                                    <integer value="1000"/>
-                                </visibilityPriorities>
-                                <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
-                                    <real value="3.4028234663852886e+38"/>
-                                </customSpacing>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5My-tg-oOK" secondAttribute="trailing" constant="20" id="F1W-ec-HBc"/>
+                                    <constraint firstItem="5My-tg-oOK" firstAttribute="leading" secondItem="BoF-ZP-x5Z" secondAttribute="leading" constant="20" id="G6t-Nk-dKt"/>
+                                    <constraint firstItem="5My-tg-oOK" firstAttribute="top" secondItem="BoF-ZP-x5Z" secondAttribute="top" constant="20" id="TzG-mr-Arv"/>
+                                    <constraint firstAttribute="bottom" secondItem="5My-tg-oOK" secondAttribute="bottom" constant="20" id="WVi-D6-eOC"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="5My-tg-oOK" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="7RB-XN-425"/>
-                            <constraint firstItem="5My-tg-oOK" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="aYu-bs-MC2"/>
+                            <constraint firstItem="BoF-ZP-x5Z" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="JtK-3y-1Ik"/>
+                            <constraint firstItem="BoF-ZP-x5Z" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="QFa-d0-qbF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="deleteCardButton" destination="GnV-Bb-7sk" id="NY6-4f-pmZ"/>
+                        <outlet property="newCardButton" destination="NSs-gu-iIf" id="Rvq-L3-onj"/>
                         <outlet property="skView" destination="m2S-Jp-Qdl" id="qux-te-cT3"/>
+                        <outlet property="toolsBackground" destination="BoF-ZP-x5Z" id="X38-Cb-dVd"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
