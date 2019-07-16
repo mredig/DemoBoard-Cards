@@ -21,7 +21,7 @@ class GameScene: SKScene {
 	func createNewCard() {
 		let midPoint = CGPoint(x: frame.midX, y: frame.midY)
 		let newCard = cardController.create(at: midPoint)
-		newCard.selected = true
+		newCard.select()
 		addChild(newCard)
 	}
 

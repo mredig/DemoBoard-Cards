@@ -21,7 +21,7 @@ class CardController {
 	}
 
 	func selectedCard() -> NoteCard? {
-		guard let index = cards.firstIndex(where: { return $0.selected }) else { return nil }
+		guard let index = cards.firstIndex(where: { return $0.isSelected }) else { return nil }
 		return cards[index]
 	}
 
@@ -40,7 +40,7 @@ protocol ItemSelectHandler: AnyObject {
 extension CardController: ItemSelectHandler {
 	func deselectAll() {
 		for card in cards {
-			card.selected = false
+			card.deselect()
 		}
 	}
 }

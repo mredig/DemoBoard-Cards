@@ -50,7 +50,19 @@ class ViewController: NSViewController {
 	}
 
 	@IBAction func deleteCardButtonPressed(_ sender: NSButton) {
-		scene?.deleteSelectedCard()
+
+		let alert = NSAlert()
+		alert.messageText = "Are you sure you wish to delete this card?"
+		alert.messageText = "There is no undoing this operation! Be certain you wish to proceed!"
+		alert.addButton(withTitle: "Yes, Delete")
+		alert.addButton(withTitle: "Nvm... Don't delete it!")
+
+		guard let window = NSApp.windows.first else { return }
+		alert.beginSheetModal(for: window) { (response) in
+			if response == .alertFirstButtonReturn {
+				self.scene?.deleteSelectedCard()
+			}
+		}
 	}
 	
 }

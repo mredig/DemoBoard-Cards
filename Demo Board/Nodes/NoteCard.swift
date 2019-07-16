@@ -16,7 +16,7 @@ class NoteCard: SKNode {
 	weak var selectHandler: ItemSelectHandler?
 	let labelController: LabelController
 
-	var selected = false {
+	private(set) var isSelected = false {
 		didSet {
 			updateViews()
 		}
@@ -51,8 +51,8 @@ class NoteCard: SKNode {
 	}
 
 	func updateViews() {
-		handle.color = selected ? .darkGray : .gray
-		zPosition = selected ? 11 : 10
+		handle.color = isSelected ? .darkGray : .gray
+		zPosition = isSelected ? 11 : 10
 	}
 
 	// MARK: - input
@@ -65,10 +65,17 @@ class NoteCard: SKNode {
 		}
 	}
 
+	func select() {
+		selectHandler?.deselectAll()
+		isSelected = true
+	}
+
+	func deselect() {
+		isSelected = false
+	}
+
 	var movingOffset: CGPoint?
 	override func mouseDown(with event: NSEvent) {
-		selectHandler?.deselectAll()
-		selected = true
 		let location = event.location(in: self)
 		let child = atPoint(location)
 		if child.name == "handle" {
