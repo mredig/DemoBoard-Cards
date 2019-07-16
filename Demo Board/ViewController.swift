@@ -40,6 +40,7 @@ class ViewController: NSViewController {
 
 		toolsBackground.layer = CALayer()
 		toolsBackground.layer?.backgroundColor = .init(gray: 0.3, alpha: 0.8)
+		toolsBackground.layer?.cornerRadius = 10
     }
 
 	override func viewDidLayout() {
