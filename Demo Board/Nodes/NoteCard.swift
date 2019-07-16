@@ -78,8 +78,16 @@ class NoteCard: SKNode {
 	override func mouseDown(with event: NSEvent) {
 		let location = event.location(in: self)
 		let child = atPoint(location)
-		if child.name == "handle" {
+		switch child.name {
+		case "handle":
 			movingOffset = CGPoint(x: -location.x, y: -location.y)
+		case "Label":
+			print("label tapped")
+			if let label = child as? SKLabelNode {
+				labelController.setCurrentLabel(label)
+			}
+		default:
+			break
 		}
 	}
 

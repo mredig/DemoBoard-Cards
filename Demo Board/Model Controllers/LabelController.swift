@@ -44,6 +44,7 @@ class LabelController {
 		label.horizontalAlignmentMode = .left
 		label.verticalAlignmentMode = .baseline
 		label.text = ""
+		label.name = "Label"
 		if let location = location {
 			label.position = location
 		} else {
