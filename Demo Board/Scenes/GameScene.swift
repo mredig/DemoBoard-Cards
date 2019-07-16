@@ -48,6 +48,7 @@ class GameScene: SKScene {
 		switch event.keyCode {
 		case 51:
 			//backspace pressed
+			cardController.selectedCard()?.deleteCharacter()
 			return
 		case 36:
 			// return pressed
@@ -57,9 +58,7 @@ class GameScene: SKScene {
 		}
 
 		guard let character = event.characters?.first else { return }
-		print(character)
-
-//		cardController.selectedCard().
+		cardController.selectedCard()?.appendCharacter(character)
 	}
     
     

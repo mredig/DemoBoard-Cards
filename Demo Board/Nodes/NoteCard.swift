@@ -14,7 +14,7 @@ class NoteCard: SKNode {
 	let handle: SKSpriteNode
 	var contents = [SKLabelNode]()
 	weak var selectHandler: ItemSelectHandler?
-	var labels = [SKLabelNode]()
+	let labelController: LabelController
 
 	var selected = false {
 		didSet {
@@ -36,6 +36,7 @@ class NoteCard: SKNode {
 		handle.anchorPoint = CGPoint.zero
 		handle.position.y = size.height - 20
 		handle.name = "handle"
+		self.labelController = LabelController(maxHeight: background.size.height, startOffset: handle.size.height, iterationOffset: 20)
 		super.init()
 		addChild(background)
 		background.addChild(handle)
@@ -91,8 +92,26 @@ class NoteCard: SKNode {
 		movingOffset = nil
 	}
 
-	func getKeystroke(_ character: Character) {
+	func appendCharacter(_ character: Character) {
+		if let currentLabel = labelController.currentLabel() {
+			guard let currentText = currentLabel.text else { return }
+			currentLabel.text = "\(currentText)\(character)"
+		} else {
+			let newLabel = labelController.create()
+			addChild(newLabel)
+			newLabel.text = "\(character)"
+		}
+	}
 
+	func deleteCharacter() {
+		guard let currentLabel = labelController.currentLabel() else { return }
+		guard var currentText = currentLabel.text else { return }
+		currentText.removeLast()
+		currentLabel.text = "\(currentText)"
+	}
+
+	func newline() {
+		
 	}
 
 }
