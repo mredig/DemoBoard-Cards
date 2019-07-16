@@ -13,7 +13,8 @@ class LabelController {
 
 	private let maxHeight: CGFloat
 	private let startOffset: CGFloat
-	private let iterationOffset: CGFloat
+//	private let iterationOffset: CGFloat
+	private let baseFontSize: CGFloat
 
 	private var _currentLabel: SKLabelNode?
 	var currentLabel: SKLabelNode? {
@@ -28,31 +29,43 @@ class LabelController {
 		}
 	}
 
-	init(maxHeight: CGFloat, startOffset: CGFloat, iterationOffset: CGFloat) {
+	init(maxHeight: CGFloat, startOffset: CGFloat, baseFontSize: CGFloat = 16) {
 		self.maxHeight = maxHeight
 		self.startOffset = startOffset
-		self.iterationOffset = iterationOffset
+		self.baseFontSize = baseFontSize
 	}
 
-	func create(at location: CGPoint? = nil) -> SKLabelNode {
+	private func layoutLabels() {
+		for (index, label) in labels.enumerated() {
+			if index == 0 {
+				label.fontSize = baseFontSize * 2
+			} else {
+				label.fontSize = baseFontSize
+			}
+			label.position = CGPoint(x: 20, y: yOffset(at: index))
+		}
+	}
 
-		let yOffset = maxHeight - startOffset - iterationOffset * CGFloat(labels.count + 1)
+	private func yOffset(at index: Int) -> CGFloat {
+		let lineHeight: CGFloat = 1.5
+		let firstItem = maxHeight - startOffset - (baseFontSize * lineHeight * 2)
+		let additionalOffset = CGFloat(index) * (baseFontSize * lineHeight)
+		return firstItem - additionalOffset
+	}
+
+	func createLabel() -> SKLabelNode {
 
 		let label = SKLabelNode(fontNamed: "Courier")
-		label.fontSize = 16
 		label.fontColor = .black
 		label.horizontalAlignmentMode = .left
 		label.verticalAlignmentMode = .baseline
 		label.text = ""
 		label.name = "Label"
-		if let location = location {
-			label.position = location
-		} else {
-			label.position = CGPoint(x: 20, y: yOffset)
-		}
+
 
 		labels.append(label)
 		setCurrentLabel(label)
+		layoutLabels()
 		return label
 	}
 
@@ -62,6 +75,7 @@ class LabelController {
 		if currentLabel == label {
 			currentLabel = labels.last
 		}
+		layoutLabels()
 	}
 
 	func setCurrentLabel(_ label: SKLabelNode) {

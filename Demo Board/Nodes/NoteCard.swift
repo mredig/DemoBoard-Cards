@@ -36,7 +36,7 @@ class NoteCard: SKNode {
 		handle.anchorPoint = CGPoint.zero
 		handle.position.y = size.height - 20
 		handle.name = "handle"
-		self.labelController = LabelController(maxHeight: background.size.height, startOffset: handle.size.height, iterationOffset: 20)
+		self.labelController = LabelController(maxHeight: background.size.height, startOffset: handle.size.height, baseFontSize: 16)
 		super.init()
 		addChild(background)
 		background.addChild(handle)
@@ -113,7 +113,7 @@ class NoteCard: SKNode {
 			guard let currentText = currentLabel.text else { return }
 			currentLabel.text = "\(currentText)\(character)"
 		} else {
-			let newLabel = labelController.create()
+			let newLabel = labelController.createLabel()
 			addChild(newLabel)
 			newLabel.text = "\(character)"
 		}
@@ -131,7 +131,7 @@ class NoteCard: SKNode {
 	}
 
 	func newline() {
-		let newLabel = labelController.create()
+		let newLabel = labelController.createLabel()
 		addChild(newLabel)
 	}
 
