@@ -41,6 +41,11 @@ class LabelController {
 		return label
 	}
 
+	func remove(label: SKLabelNode) {
+		guard let index = labels.firstIndex(of: label) else { return }
+		labels.remove(at: index)
+	}
+
 	func currentLabel() -> SKLabelNode? {
 		return labels.last
 	}

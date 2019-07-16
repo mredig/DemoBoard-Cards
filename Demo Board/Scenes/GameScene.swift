@@ -52,6 +52,7 @@ class GameScene: SKScene {
 			return
 		case 36:
 			// return pressed
+			cardController.selectedCard()?.newline()
 			return
 		default:
 			break

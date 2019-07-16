@@ -106,12 +106,17 @@ class NoteCard: SKNode {
 	func deleteCharacter() {
 		guard let currentLabel = labelController.currentLabel() else { return }
 		guard var currentText = currentLabel.text else { return }
+		guard !currentText.isEmpty else {
+			labelController.remove(label: currentLabel)
+			return
+		}
 		currentText.removeLast()
 		currentLabel.text = "\(currentText)"
 	}
 
 	func newline() {
-		
+		let newLabel = labelController.create()
+		addChild(newLabel)
 	}
 
 }
