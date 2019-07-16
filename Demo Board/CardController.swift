@@ -24,6 +24,11 @@ class CardController {
 		guard let index = cards.firstIndex(where: { return $0.selected }) else { return nil }
 		return cards[index]
 	}
+
+	func delete(card: NoteCard) {
+		guard let index = cards.firstIndex(of: card) else { return }
+		cards.remove(at: index)
+	}
 }
 
 

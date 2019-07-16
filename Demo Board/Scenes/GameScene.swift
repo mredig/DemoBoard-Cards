@@ -18,31 +18,50 @@ class GameScene: SKScene {
     }
     
     
-    func touchDown(atPoint pos : CGPoint) {
-		let newCard = cardController.create(at: pos)
+	func createNewCard() {
+		let midPoint = CGPoint(x: frame.midX, y: frame.midY)
+		let newCard = cardController.create(at: midPoint)
+		newCard.selected = true
 		addChild(newCard)
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
+	}
 
-    }
+	func deleteSelectedCard() {
+		guard let selectedCard = cardController.selectedCard() else { return }
+		removeChildren(in: [selectedCard])
+		cardController.delete(card: selectedCard)
+	}
     
-    func touchUp(atPoint pos : CGPoint) {
+    override func update(_ currentTime: TimeInterval) {
+        // Called before each frame is rendered
+    }
+}
 
-    }
-    
-    override func mouseDown(with event: NSEvent) {
-        self.touchDown(atPoint: event.location(in: self))
-    }
-    
-    override func mouseDragged(with event: NSEvent) {
-        self.touchMoved(toPoint: event.location(in: self))
-    }
-    
-    override func mouseUp(with event: NSEvent) {
-        self.touchUp(atPoint: event.location(in: self))
-    }
-    
+// MARK: - Input
+extension GameScene {
+	func touchDown(atPoint pos : CGPoint) {
+
+	}
+
+	func touchMoved(toPoint pos : CGPoint) {
+
+	}
+
+	func touchUp(atPoint pos : CGPoint) {
+
+	}
+
+	override func mouseDown(with event: NSEvent) {
+		self.touchDown(atPoint: event.location(in: self))
+	}
+
+	override func mouseDragged(with event: NSEvent) {
+		self.touchMoved(toPoint: event.location(in: self))
+	}
+
+	override func mouseUp(with event: NSEvent) {
+		self.touchUp(atPoint: event.location(in: self))
+	}
+
 	override func keyDown(with event: NSEvent) {
 		// keycode 51 is backspace, 36 is return
 		switch event.keyCode {
@@ -61,10 +80,4 @@ class GameScene: SKScene {
 		guard let character = event.characters?.first else { return }
 		cardController.selectedCard()?.appendCharacter(character)
 	}
-    
-    
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-    }
 }
-

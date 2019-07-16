@@ -44,5 +44,14 @@ class ViewController: NSViewController {
 
 		scene?.size = view.frame.size
 	}
+
+	@IBAction func newCardButtonPressed(_ sender: NSButton) {
+		scene?.createNewCard()
+	}
+
+	@IBAction func deleteCardButtonPressed(_ sender: NSButton) {
+		scene?.deleteSelectedCard()
+	}
+	
 }
 
