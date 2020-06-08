@@ -14,7 +14,7 @@ class CardController {
 	func create(at location: CGPoint) -> NoteCard {
 		let newCardSize = CGSize(width: 400, height: 300)
 		let newCard = NoteCard(size: newCardSize, selectHandler: self)
-		let newPos = CGPoint(x: location.x - newCardSize.width / 2, y: location.y - newCardSize.height / 2)
+		let newPos = CGPoint(x: location.x - newCardSize.width / 2, y: location.y + newCardSize.height / 2)
 		newCard.position = newPos
 		cards.append(newCard)
 		return newCard

@@ -48,7 +48,7 @@ class LabelController {
 
 	private func yOffset(at index: Int) -> CGFloat {
 		let lineHeight: CGFloat = 1.5
-		let firstItem = maxHeight - startOffset - (baseFontSize * lineHeight * 2)
+		let firstItem = -(baseFontSize * lineHeight * 2)
 		let additionalOffset = CGFloat(index) * (baseFontSize * lineHeight)
 		return firstItem - additionalOffset
 	}
